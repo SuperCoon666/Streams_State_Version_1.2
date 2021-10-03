@@ -1,7 +1,7 @@
 import sys
 import requests
 from bs4 import BeautifulSoup
-
+import lxml
 def query_date(u):
     try:
         url = "https://www.youtube.com/watch?v=" + u
