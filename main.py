@@ -20,15 +20,14 @@ try:
     f = open('C:\\Users\\Vlad\\Desktop\\Data_Streams.txt')
     f = f.readlines()
     for i in range(len(f)):
-        x = f[i].replace("\n", '')
-        ind = x.index("'")
-        numb = x[:ind]
-        x = x[ind:].replace("'",'')
 
-        if x=="\n" or x==" " or x=='':
+        if not f[i].strip():
             continue
 
-        res = numb + "'" + x +"' : " + query_date(f[i])
-        print(res)
+        x = f[i].replace("\n", '')
+        ind = x.index("'")
+        x1 = x[ind:].replace("'",'')
+        res = x +" : " + query_date(x1)
+        print( res)
 except:
     print(sys.exc_info()[1])
