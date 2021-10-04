@@ -16,18 +16,22 @@ def query_date(u):
         e = sys.exc_info()[1]
         return e
 
-try:
-    f = open('C:\\Users\\Vlad\\Desktop\\Data_Streams.txt')
-    f = f.readlines()
-    for i in range(len(f)):
+def main(start):
+    try:
+        if not start.strip():
+            return
 
-        if not f[i].strip():
-            continue
-
-        source = f[i].replace("\n", '')
+        source = start.replace("\n", '')
         ind = source.index("'")
         link = source[ind:].replace("'",'')
         res = source +" : " + query_date(link)
-        print( res)
-except:
-    print(sys.exc_info()[1])
+        return res
+    except:
+        return "Error: "+ str(sys.exc_info()[1])
+
+f = open('C:\\Users\\Vlad\\Desktop\\Data_Streams.txt')
+f = f.readlines()
+for i in range(len(f)):
+    result = main(f[i])
+    if result != None:
+        print(result)
