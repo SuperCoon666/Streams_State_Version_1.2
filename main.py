@@ -22,8 +22,13 @@ try:
     for i in range(len(f)):
         x = f[i].replace("\n", '')
         ind = x.index("'")
+        numb = x[:ind]
         x = x[ind:].replace("'",'')
-        res = str(i+1) + ", '" + x +"' : " + query_date(f[i])
+
+        if x=="\n" or x==" " or x=='':
+            continue
+
+        res = numb + "'" + x +"' : " + query_date(f[i])
         print(res)
 except:
     print(sys.exc_info()[1])
