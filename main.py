@@ -20,7 +20,10 @@ try:
     f = open('C:\\Users\\Vlad\\Desktop\\Data_Streams.txt')
     f = f.readlines()
     for i in range(len(f)):
-        res = str(i+1) + ". " + f[i].replace("\n", '')+" : " + query_date(f[i])
+        x = f[i].replace("\n", '')
+        ind = x.index("'")
+        x = x[ind:].replace("'",'')
+        res = str(i+1) + ", '" + x +"' : " + query_date(f[i])
         print(res)
 except:
     print(sys.exc_info()[1])
