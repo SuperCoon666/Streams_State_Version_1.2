@@ -16,7 +16,7 @@ def query_date(u):
         e = sys.exc_info()[1]
         return e
 
-def main(start):
+def link_check(start):
     try:
         if not start.strip():
             return
@@ -32,6 +32,6 @@ def main(start):
 f = open('C:\\Users\\Vlad\\Desktop\\Data_Streams.txt')
 f = f.readlines()
 for i in range(len(f)):
-    result = main(f[i])
+    result = link_check(f[i])
     if result != None:
         print(result)
