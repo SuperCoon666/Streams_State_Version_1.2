@@ -24,10 +24,10 @@ try:
         if not f[i].strip():
             continue
 
-        x = f[i].replace("\n", '')
-        ind = x.index("'")
-        x1 = x[ind:].replace("'",'')
-        res = x +" : " + query_date(x1)
+        source = f[i].replace("\n", '')
+        ind = source.index("'")
+        link = source[ind:].replace("'",'')
+        res = source +" : " + query_date(link)
         print( res)
 except:
     print(sys.exc_info()[1])
