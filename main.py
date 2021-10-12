@@ -31,7 +31,7 @@ f = f.readlines()
 numbers = ""
 for i in range(len(f)):
     if not f[i].strip():
-            continue
+        continue
     result = link_check(f[i])
 
     if "False" in result:
